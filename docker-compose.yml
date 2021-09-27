@@ -4,7 +4,12 @@ services:
     build: ./sportradar-test-challenge-backend
     ports:
       - 4200:4200
+    environment:
+      - PORT=4200
   front:
     build: ./sportradar-code-challenge-frontend
     ports:
       - 3000:3000
+    environment:
+      - PORT=4200
+      - REACT_APP_API_URL=http://localhost:4200
