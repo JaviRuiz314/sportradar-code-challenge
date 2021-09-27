@@ -1,7 +1,7 @@
 version: "3.5"
 services:
   backend:
-    build: ./sportradar-test-challenge-backend
+    build: ./sportradar-code-challenge-backend
     ports:
       - 4200:4200
     environment:
@@ -11,5 +11,5 @@ services:
     ports:
       - 3000:3000
     environment:
-      - PORT=4200
+      - PORT=3000
       - REACT_APP_API_URL=http://localhost:4200
