@@ -1,0 +1,21 @@
+version: "3.5"
+
+networks:
+  isolation-network:
+    driver: bridge
+
+services:
+  backend:
+    build: ./sportradar-code-challenge-backend
+    ports:
+      - 4200:4200
+    arg:
+      - PORT=4200
+
+  front:
+    build: ./sportradar-code-challenge-frontend
+    ports:
+      - 3000:3000
+    arg:
+      - PORT=3000
+      - API_URL=http://localhost:4200
